@@ -16,12 +16,8 @@ docs:
     url: /About_Me/
   - title: "Node.js"
     url: /nodejs/
-  - title: "Linux"
-    children:
-      - title: "Ubuntu"
-        url: /ubuntu/
-      - title: "CentOS"
-        url: /centos/
+  - title: "Flutter"
+    url: /flutter/
   - title: "Java"
     url: /java/
   - title: "Spring"
