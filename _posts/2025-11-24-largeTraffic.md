@@ -47,7 +47,7 @@ last_modified_at: 2025-11-25
   
 다시 보니 자바를 거의 자바스크립트처럼 짜놓은 나를 발겼했고, 전혀 객체지향적이지 않았다.  
 (~~라고는 하는데 요즘 자바로도 함수형 많이 짜잖아!!~~)  
-<img src="/assets/images/posts/noType.png" width="30%" height="20%">
+<img src="/assets/images/posts/largeTrafficService/noType.png" width="30%" height="20%">
   
 이번 프로젝트의 목표는 단순하다.  
 - 자바를 자바답게 사용할 것
