@@ -1,7 +1,7 @@
 ---
 title: "Infra"
 layout: category
-permalink: /categories/Infra/
+permalink: /categories/infra/
 author_profile: true
 taxonomy: Infra
 sidebar:
