@@ -22,8 +22,8 @@ locale: "ko-KR" #"en-US"
 title: "Song Seung Hyun" # 상단 헤더에 보이는 블로그 명
 title_separator: "&#124;"
 subtitle: # site tagline that appears below site title in masthead
-name: "your name here" # 블로그 닉네임 설정
-description: "this is my blog!" # 블로그 설명
+name: "jjamma's 개발새발" # 블로그 닉네임 설정
+description: "개발을 개발새발" # 블로그 설명
 url: "https://songsh927.github.io" # 블로그 URL
 baseurl: # the subpath of your site, e.g. "/blog"
 repository: "github-account/github-account.github.io" # GitHub Repo 이름
@@ -102,7 +102,7 @@ author:
   avatar: "/assets/images/profile.jpg" # 블로그 프로필 사진
   #   bio              : "hi all!"
   location         : "Seoul, Korea"
-  # email            : "youremailhere@xxxxxx.com"
+  email            : "songsh96927@gmail.com"
 
   links: # 사이트 링크
 #     - label: "Email"
