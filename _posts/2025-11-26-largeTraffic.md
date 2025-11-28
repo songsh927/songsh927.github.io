@@ -74,7 +74,7 @@ Nest.js에서도 DTO와 Entity는 있었지만 효율적으로 사용하진 못�
 한풀이는 여기까지 하고 기세로 밀어붙인 코드를 살펴보자
 
 
-```
+```java
 member/controller
 
 @GetMapping("/find")
@@ -89,7 +89,7 @@ public ResponseEntity findMember(@RequestParam(required = true) String idx){
 Spring에서 지원하는 ResponseEntity를 사용했다. ResponseEntity 클래스를 살펴보면 첫 번째 파라미터가 Nullable로 되어있는 Response Body를 받게 되어있다.  
   
 이 Body에는 DefaultRes 클래스를 통해 요청 성공 여부를 담는 success, 요청에 대한 메세지를 담는 msg, 요청에 대한 응답 데이터를 위한 data로 구성했다.
-```
+```json
 /member/find?idx=1
 
 ResponseBody
@@ -107,25 +107,25 @@ ResponseBody
 
 참고를 했던 코드에서는 success위치에 http status 코드를 넣어줬는데 ResponseEntity의 파라미터를 살펴보면 HttpStatus.OK 와 같이 http status 코드를 보내주기때문에 해당 부분은 단순히 boolean타입으로 요청에 대한 성공 여부로 바꿨다.
   
-```
+```java
 member/service
 
 @Transactional
-    public DefaultRes createMemberInfo(JoinDTO joinDTO){
+public DefaultRes createMemberInfo(JoinDTO joinDTO){
 
-        DefaultRes checkDuplicate = validateDuplicationMemberInfo(joinDTO);
+    DefaultRes checkDuplicate = validateDuplicationMemberInfo(joinDTO);
 
-        if(checkDuplicate.isSuccess()){
-            memberRepository.saveMember(joinDTO.toMember());
-            return DefaultRes.res(true, "회원가입 성공", new GetMemberInfoDTO(joinDTO.toMember()));
-        }
-        return DefaultRes.res(false, checkDuplicate.getMsg());
+    if(checkDuplicate.isSuccess()){
+        memberRepository.saveMember(joinDTO.toMember());
+        return DefaultRes.res(true, "회원가입 성공", new GetMemberInfoDTO(joinDTO.toMember()));
     }
+    return DefaultRes.res(false, checkDuplicate.getMsg());
+}
 ```  
 위에는 회원가입 API의 서비스단 코드다. return에 보면 컨트롤러 단과 비슷하게 DefaultRes 클래스를 사용하는 것을 볼 수 있다.  
   
-물론 Exception 클래스를 사용하여 예외처리를 하고 실패에 대한 로그를 남기고, 응답을 보낼 순 있겠지만  
-예외상황으로 인한 에러와 정상적인 로직을 통한 실패는 다르다.(물론 나의 스프링 사용 역량이 부족해서일 수도 있다.)  
+물론 Exception 클래스를 사용하여 예외처리를 하고 실패에 대한 로그를 남기고, 응답을 보낼 순 있겠지만 예외상황으로 인한 에러와 정상적인 로직을 통한 실패는 다르다.  
+(물론 나의 스프링 사용 역량이 부족해서일 수도 있다.)  
   
 서비스 코드(비즈니스 로직)에서 컨트롤러 코드로 데이터를 보낼 때 성공 여부와 메세지, 데이터를 보내야 하는 로직들이 있기 때문에 DefaultRes를 공통으로 사용하기로 했다.  
 
