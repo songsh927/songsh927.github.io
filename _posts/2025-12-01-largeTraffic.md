@@ -7,7 +7,7 @@ categories:
 tags:
   - [tag1, tag2]
 
-permalink: /categories/backend/large-traffic-service/5
+permalink: /categories/projects/large-traffic-service/5
 
 toc: true
 toc_sticky: true
