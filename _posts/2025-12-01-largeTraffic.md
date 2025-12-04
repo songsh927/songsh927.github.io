@@ -7,7 +7,7 @@ categories:
 tags:
   - [tag1, tag2]
 
-permalink: /categories/backend/large-traffic-service/4
+permalink: /categories/backend/large-traffic-service/5
 
 toc: true
 toc_sticky: true
@@ -188,7 +188,7 @@ public class JwtCommonFilter extends OncePerRequestFilter {
         String token = request.getHeader("x-access-token");
         String checkToken = (String) redisService.getValues(token);
 
-        if(token != null || checkToken != null){
+        if(token == null || checkToken == null){
             // TODO return 401
             System.out.println(":::: token : " + token);
             System.out.println(":::: check : " + checkToken);
