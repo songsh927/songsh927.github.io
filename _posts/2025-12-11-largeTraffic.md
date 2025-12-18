@@ -44,6 +44,9 @@ public DefaultRes reserveTicket(Integer ticket_idx, Integer member_idx){
   
 저 부분에 티켓 재고 확인 로직을 넣어보자.  
   
+---  
+
+  
 ## 비관적 락  
   
 당장 학부생 시절만 생각해봐도 학교에 그 부실한 서버로 어떻게 그런 부하를 견뎠는지 모르겠다.  
@@ -76,7 +79,6 @@ public interface TicketJpaRepository extends JpaRepository<TicketMainEntity, Lon
 앞전에 사용을 고려했던 JpaRepository를 사용하여 비관적락을 간편하게 구현해보자.
   
 이름만 가지고 간편하게 쿼리를 작성해준다길래 정성스럽게 적었지만 원하는 대로는 동작을 안한다.  
-~~JPA가 비정형 데이터 분석용 AI는 안쓰나보다.~~  
   
 @Lock(LockModeType.PESSIMISTIC_WRITE) 어노테이션과 옵션을 사용하여 비관적 락을 사용할 것을 선언해준다.  
 그리고 쿼리를 사용하여 ticket_qty가 0보다 큰지(예매가 가능한 상태인지) 확인하여 boolean으로 리턴해주도록 한다.  
