@@ -1,5 +1,5 @@
 ---
-title: "[티켓 예매 서비스] 서비스의 1차 부하테스트"
+title: "[티켓 예매 서비스] 부하테스트 맛보기 (feat. K6)"
 excerpt: " "
 
 categories:
