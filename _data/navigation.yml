@@ -23,8 +23,8 @@ categories:
     children:
       - title: "대규모 트래픽 서비스"
         url: /categories/projects/large-traffic-service/
-      # - title: "슬랙 클론"
-      #   url: /categories/projects/slack-clone/
+      - title: "워크스페이스 서비스"
+        url: /categories/projects/workspace/
   - title: "Backend"
     url: /categories/backend/
     children:
